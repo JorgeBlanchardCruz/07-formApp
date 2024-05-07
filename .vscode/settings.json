@@ -12,6 +12,8 @@
         "src/styles.css": true,
         "src/main.ts": true,
         "src/favicon.ico": true,
-        "src/index.html": true
+        "src/index.html": true,
+        ".angular": true,
+        "src/assets": true
     }
 }
