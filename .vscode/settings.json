@@ -8,6 +8,10 @@
         "angular.json": true,
         ".gitignore": true,
         ".editorconfig": true,
-        "node_modules": true
+        "node_modules": true,
+        "src/styles.css": true,
+        "src/main.ts": true,
+        "src/favicon.ico": true,
+        "src/index.html": true
     }
 }
