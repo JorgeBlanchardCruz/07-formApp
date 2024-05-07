@@ -1,0 +1,13 @@
+{
+    "files.exclude": {
+        "tsconfig.spec.json": true,
+        "tsconfig.json": true,
+        "tsconfig.app.json": true,
+        "package.json": true,
+        "package-lock.json": true,
+        "angular.json": true,
+        ".gitignore": true,
+        ".editorconfig": true,
+        "node_modules": true
+    }
+}
