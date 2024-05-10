@@ -1,17 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ErrorsService } from '../../services/errors.service';
 
 @Component({
   templateUrl: './switches-page.component.html',
 })
-export class SwitchesPageComponent {
+export class SwitchesPageComponent implements OnInit{
 
   public form = this.fb.group({
     gender: ['M', Validators.required],
     wantNofitications: [true, Validators.required],
     termAndConditions: [false, Validators.requiredTrue],
   });
+
+  public person = {
+    gender: 'F',
+    wantNofitications: false
+  }
 
   constructor(
     private fb: FormBuilder,
@@ -20,14 +25,25 @@ export class SwitchesPageComponent {
     this.errors.setForm(this.form);
   }
 
+  ngOnInit(): void {
+    this.form.reset(this.person);
+  }
+
   public onSubmit(): void {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
 
+    const { termAndConditions, ...rest } = this.form.value;
+
+    this.person = {
+      gender: rest.gender as string,
+      wantNofitications: rest.wantNofitications as boolean
+    };
+
     console.log(this.form.value);
-    this.form.reset();
+    this.form.reset(this.person);
   }
 
 }
