@@ -102,13 +102,13 @@
 <pre>{{ form.errors| json }}</pre>
 
 <h5>Nombre</h5>
-<pre>{{ form.value.name | json }}</pre>
+<pre>{{ form.controls['name'].errors| json }}</pre>
 
 <h5>Email</h5>
-<pre>{{ form.value.email | json }}</pre>
+<pre>{{ form.controls['email'].errors | json }}</pre>
 
 <h5>Username</h5>
-<pre>{{ form.value.username | json }}</pre>
+<pre>{{ form.controls['username'].errors | json }}</pre>
 
 
 <h5>Password</h5>
