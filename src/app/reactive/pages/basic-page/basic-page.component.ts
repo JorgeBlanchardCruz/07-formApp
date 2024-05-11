@@ -32,7 +32,7 @@ export class BasicPageComponent implements OnInit{
     private fb: FormBuilder,
     public errors: ValidationsService,
   ) {
-    this.errors.setForm(this.myForm);
+    this.errors.initialize(this.myForm);
   }
 
   ngOnInit(): void {

@@ -22,7 +22,7 @@ export class SwitchesPageComponent implements OnInit{
     private fb: FormBuilder,
     public errors: ValidationsService
   ) {
-    this.errors.setForm(this.form);
+    this.errors.initialize(this.form);
   }
 
   ngOnInit(): void {

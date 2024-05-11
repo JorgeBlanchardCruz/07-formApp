@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FormArray, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, ValidationErrors } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root' //significa que el servicio se va a inyectar en el root de la aplicación como singleton
@@ -11,25 +11,25 @@ export class ValidationsService {
 
   private form!: FormGroup;
 
-  public setForm( form: FormGroup ): void {
+  public initialize(form: FormGroup): void {
     this.form = form;
   }
 
-  public isNotValidField( field: string) : boolean | any {
+  public isNotValidField(field: string): boolean | any {
     if (!this.form.get(field))
       return false;
 
     return this.form.get(field)?.errors && this.form.get(field)?.touched;
   }
 
-  public isNotValidFieldArray( formArray: FormArray, index: number ): boolean | any {
+  public isNotValidFieldArray(formArray: FormArray, index: number): boolean | any {
     if (!formArray.controls[index])
       return false;
 
     return formArray.controls[index].errors && formArray.controls[index].touched;
   }
 
-  public getErrorMessage( field: string ): string | null {
+  public getErrorMessage(field: string): string | null {
     if (!this.form.get(field))
       return null;
 
@@ -44,7 +44,7 @@ export class ValidationsService {
     return null;
   }
 
-  private getErrorMessageByError( error: string, value: any ): string {
+  private getErrorMessageByError(error: string, value: any): string {
     const messages: any = {
       required: 'Este campo es requerido',
       minlength: `Este campo debe tener al menos ${value.requiredLength} caracteres`,
@@ -54,5 +54,20 @@ export class ValidationsService {
 
     return messages[error];
   }
+
+  public cantBeStrider = (control: FormControl): ValidationErrors | null => {
+
+    const value = control.value?.trim().toLowerCase();
+
+    if (value === 'strider') {
+      return {
+        noStrider: true
+      }
+    }
+
+    return null;
+  }
+
+
 
 }
