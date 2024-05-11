@@ -2,9 +2,12 @@ import { Injectable } from '@angular/core';
 import { FormArray, FormGroup } from '@angular/forms';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' //significa que el servicio se va a inyectar en el root de la aplicación como singleton
 })
-export class ErrorsService {
+export class ValidationsService {
+
+  public firstNameAndLastnamePattern: string = '([a-zA-Z]+) ([a-zA-Z]+)';
+  public emailPattern: string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
   private form!: FormGroup;
 

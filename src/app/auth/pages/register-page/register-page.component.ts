@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ErrorsService } from '../../../reactive/services/errors.service';
+import { ValidationsService } from '../../../shared/services/validations.service';
 import * as customValidators from '../../../shared/validators/validators';
 
 @Component({
@@ -19,7 +19,7 @@ export class RegisterPageComponent {
 
   constructor(
     private fb: FormBuilder,
-    public errors: ErrorsService
+    public errors: ValidationsService
   ) { }
 
   public onSubmit(): void {

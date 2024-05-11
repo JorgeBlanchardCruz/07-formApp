@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { ErrorsService } from '../../services/errors.service';
+import { ValidationsService } from '../../../shared/services/validations.service';
 
 @Component({
   templateUrl: './dinamic-page.component.html',
@@ -22,7 +22,7 @@ export class DinamicPageComponent {
 
   constructor(
     private fb: FormBuilder,
-    public errors: ErrorsService
+    public errors: ValidationsService
   ) {
     this.errors.setForm(this.form);
   }

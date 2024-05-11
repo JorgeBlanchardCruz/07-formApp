@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ErrorsService } from '../../services/errors.service';
+import { ValidationsService } from '../../../shared/services/validations.service';
 
 const rtx5090 = {
   name: 'RTX 5090',
@@ -30,7 +30,7 @@ export class BasicPageComponent implements OnInit{
 
   constructor(
     private fb: FormBuilder,
-    public errors: ErrorsService,
+    public errors: ValidationsService,
   ) {
     this.errors.setForm(this.myForm);
   }
