@@ -15,7 +15,7 @@
                            formControlName="name"
                            placeholder="Nombre del usuario">
 
-                    <span *ngIf="validations.isNotValidField('name')"
+                    <span *ngIf="customValidators.isNotValidField('name')"
                         class="form-text text-danger">
                         Debe de ser en formato de nombre y apellido
                     </span>
@@ -30,7 +30,7 @@
                            class="form-control"
                           formControlName="email"
                            placeholder="Email del usuario">
-                    <span *ngIf="validations.isNotValidField('email')"
+                    <span *ngIf="customValidators.isNotValidField('email')"
                         class="form-text text-danger">
                         mensaje de error del email
                     </span>
@@ -45,7 +45,7 @@
                            class="form-control"
                            formControlName="username"
                            placeholder="Nombre código del usuario">
-                    <span *ngIf="validations.isNotValidField('username')"
+                    <span *ngIf="customValidators.isNotValidField('username')"
                         class="form-text text-danger">
                          El username no puede ser Strider
                     </span>
@@ -61,7 +61,7 @@
                           formControlName="password"
                            placeholder="Password de su cuenta">
 
-                    <span *ngIf="validations.isNotValidField('password')"
+                    <span *ngIf="customValidators.isNotValidField('password')"
                         class="form-text text-danger">
                          La contraseña debe de ser mayor de 6 caracteres.
                     </span>
@@ -77,7 +77,7 @@
                            formControlName="password2"
                            placeholder="Confirmar la contraseña">
 
-                    <span *ngIf="validations.isNotValidField('password')"
+                    <span *ngIf="customValidators.isNotValidField('password')"
                         class="form-text text-danger">
                          Las contraseñas deben de ser iguales
                     </span>
