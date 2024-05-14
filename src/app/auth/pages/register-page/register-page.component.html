@@ -77,7 +77,7 @@
                            formControlName="password2"
                            placeholder="Confirmar la contraseña">
 
-                    <span *ngIf="customValidators.isNotValidField('password')"
+                    <span *ngIf="customValidators.isNotValidField('password2')"
                         class="form-text text-danger">
                          Las contraseñas deben de ser iguales
                     </span>
@@ -120,4 +120,4 @@
 <pre>{{ form.value.password | json }}</pre>
 
 <h5>Confirmar</h5>
-<pre>{{ form.value.password2 | json }}</pre>
+<pre>{{ form.controls["password2"].errors | json }}</pre>
